@@ -34,6 +34,7 @@ export const useDataForm = () => {
     try {
       await axios.post("/api/create", { url, uuid, origin });
 
+      form.reset();
       setStatus({ message: `${origin}/${uuid}`, type: "success" });
     } catch (error) {
       setStatus({ message: `Something went wrong.`, type: "error" });
